@@ -1,15 +1,17 @@
 class User < ApplicationRecord
+  extend Devise::Models
+  
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable,
+         authentication_keys: [:login]
   has_many :book_reviews
   has_many :favorites
   has_many :favorited_books, through: :favorites, source: :livro
   validates :ano_lancamento, :titulo, :autores, :editora, presence: { message: "não pode ser deixado em branco" }
   # validates :titulo, presence: { message: "não pode ser deixado em branco" }
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         authentication_keys: [:login]
 
   attr_accessor :login
 
