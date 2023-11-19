@@ -1,4 +1,4 @@
-class CreateBookReviews < ActiveRecord::Migration[7.1]
+class CreateBookReviews < ActiveRecord::Migration[7.0]
   def change
     create_table :book_reviews do |t|
       t.references :livro, null: false, foreign_key: true

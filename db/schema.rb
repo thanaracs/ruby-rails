@@ -25,15 +25,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_18_013942) do
     t.index ["user_id"], name: "index_book_reviews_on_user_id"
   end
 
-  create_table "favorite_books", force: :cascade do |t|
-    t.bigint "livro_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["livro_id"], name: "index_favorite_books_on_livro_id"
-    t.index ["user_id"], name: "index_favorite_books_on_user_id"
-  end
-
   create_table "favorites", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "livro_id", null: false
@@ -48,7 +39,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_18_013942) do
     t.string "titulo"
     t.string "autores"
     t.date "ano_lancamento"
-    t.text "sinopse"
+    t.text "idiomas"
+    t.integer "num_paginas"
     t.integer "nota"
     t.string "editora"
     t.text "opiniao"
@@ -74,8 +66,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_18_013942) do
 
   add_foreign_key "book_reviews", "livros"
   add_foreign_key "book_reviews", "users"
-  add_foreign_key "favorite_books", "livros"
-  add_foreign_key "favorite_books", "users"
   add_foreign_key "favorites", "livros"
   add_foreign_key "favorites", "users"
 end
