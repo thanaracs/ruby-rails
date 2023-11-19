@@ -1,0 +1,23 @@
+<div style="display: flex; justify-content: center">
+  <div id="<%= dom_id livro %>">
+    <div  style="display: flex; justify-content: left">
+      <img src="<%= livro.imagem_caminho %>" alt="Descrição da imagem" style="width: 300px;">
+    </div><br>
+    <div>
+      <strong>Titulo:</strong>
+      <%= livro.titulo %>
+    </div><br>
+    <div>
+      <strong>Autores:</strong>
+      <%= livro.autores %>
+    </div>
+    <div>
+      <strong>Ano lançamento:</strong>
+      <%= livro.ano_lancamento.strftime("%Y") %>
+    </div>
+    <div>
+      <strong>Editora:</strong>
+      <%= livro.editora %>
+    </div>
+  </div>
+</div>

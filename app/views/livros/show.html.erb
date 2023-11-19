@@ -1,0 +1,17 @@
+<div class="row justify-content-center" style="padding: 20px">
+  <div class="col-md-6 text-center">
+    <p style="color: green"><%= notice %></p>
+    <img src="<%= @livro.imagem_caminho.present? ? @livro.imagem_caminho : 'URL_DA_IMAGEM_PADRAO' %>" alt="Capa do Livro" width="300" height="500">
+  </div>
+  <div class="col-md-6" style="margin-top: 50px;">
+    <h1><%= @livro.titulo %></h1>
+    <p>Autor(es): <%= @livro.autores %></p>
+    <p>Editora: <%= @livro.editora %></p>
+    <p>Ano de Lançamento: <%= @livro.ano_lancamento.strftime('%Y') if @livro.ano_lancamento %></p>
+
+   <div  style="margin-top: 6rem;">
+    <%= link_to "Editar livro", edit_livro_path(@livro), class: "btn btn-primary", style:"margin-bottom:1rem" %>
+    <%= button_to "Destrua esse livro", @livro, method: :delete, data: { confirm: 'Tem certeza que deseja deletar?' }, class: "btn btn-danger" %>
+  </div>
+  </div>
+</div>

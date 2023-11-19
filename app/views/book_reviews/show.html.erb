@@ -1,0 +1,43 @@
+<div class="row justify-content-center" style="margin: 10rem">
+  <div class="col-md-6">
+  <img class="card-img-top mx-auto" style="max-width: 30%; height: auto; margin-bottom: 1rem" src="<%= @livro.imagem_caminho %>" alt="Imagem do Livro">
+    <h2><%= @livro.titulo %></h2>
+    <p><strong>Autor:</strong> <%= @livro.autores %></p>
+    <p><strong>Editora:</strong> <%= @livro.editora %></p>
+    <p><strong>Editora:</strong> <%= @livro.ano_lancamento.strftime("%Y") %></p>
+
+  </div>
+  <div class="col-md-6">
+    <%= form_with(model: @book_review, url: book_reviews_path, method: :post, id: 'book-review-form') do |form| %>
+      <%= form.hidden_field :livro_id, value: @livro.id %>
+      <div class="form-group">
+        <%= form.label :rating, "Nota" %>
+        <%= form.number_field :rating, class: 'form-control',min: 0, max: 5 %>
+      </div>
+      
+      <div class="form-group">
+        <%= form.label :opinion, "Opinião" %>
+        <%= form.text_area :opinion, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit "Salvar Avaliação", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('book-review-form');
+
+    form.addEventListener('submit', function(event) {
+      var rating = document.getElementById('book_review_rating').value;
+
+      if (rating === '' || isNaN(rating) || rating < 0 || rating > 5) {
+        alert('A nota não pode ser nula. Necessário um valor de 0 a 5.');
+        event.preventDefault();
+      }
+    });
+  });
+</script>

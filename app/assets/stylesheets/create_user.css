@@ -1,0 +1,17 @@
+body{
+    background-color: #80C6EE;
+}
+.create-user{
+    margin: 0 auto;
+    margin-top: 7%;
+    width: 50rem;
+    height: 100%;
+    background-color: #FFFFFF;
+    border-radius: 4rem;
+    padding: 30px;
+}
+
+.title{
+    color: #616ABB;
+    font-weight: bold;
+}
