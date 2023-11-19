@@ -27,8 +27,20 @@
             </div>
           <% end %>
         </div>
-        <div class="col col-lg-3" style="display: flex;justify-content: flex-end;">
-          <%= link_to 'Sair', custom_logout_path, method: :delete, style: 'color: white; text-decoration: none;' %>
+        <div class="col col-lg-3" style="display: flex;justify-content: flex-evenly';">
+          <%# <div class="d-flex justify-content-between">
+            <div style="margin-right: 10px">
+            <%= image_tag "user.png", alt: "Descrição da imagem", width:"50", height: "50" %>
+            <%# </div> %>
+            <div class="d-flex justify-content-evenly">
+              <div style="margin-right: 5rem"> 
+                <span style="color: white" >Bem vindo(a)! <%= current_user.name %> </span>
+              </div>
+              <div>
+                <%= link_to 'Sair', custom_logout_path, method: :delete, style: 'color: white; text-decoration: none;' %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
