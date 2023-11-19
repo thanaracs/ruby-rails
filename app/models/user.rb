@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :book_reviews
   has_many :favorites
   has_many :favorited_books, through: :favorites, source: :livro
-  validates :ano_lancamento, :titulo, :autores, :editora, presence: { message: "não pode ser deixado em branco" }
   # validates :titulo, presence: { message: "não pode ser deixado em branco" }
 
 
