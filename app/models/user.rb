@@ -15,7 +15,7 @@ class User < ApplicationRecord
   attr_accessor :login
 
    # Validar presença de login (e-mail ou username)
-   validates :login, presence: true, uniqueness: { case_sensitive: false }
+  #  validates :login, presence: true, uniqueness: { case_sensitive: false }
 
    # Sobrescrever método de autenticação para suportar login por e-mail ou username
    def self.find_for_database_authentication(warden_conditions)

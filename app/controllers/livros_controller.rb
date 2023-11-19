@@ -111,6 +111,6 @@ class LivrosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def livro_params
-      params.require(:livro).permit(:imagem_nome, :imagem_caminho, :titulo, :autores, :ano_lancamento, :nota, :editora, :opiniao)
+      params.require(:livro).permit(:imagem_nome, :imagem_caminho, :titulo, :autores, :ano_lancamento, :nota, :editora, :opiniao, :idiomas, :num_paginas)
     end
 end
