@@ -9,9 +9,10 @@
     <p>Editora: <%= @livro.editora %></p>
     <p>Ano de Lançamento: <%= @livro.ano_lancamento.strftime('%Y') if @livro.ano_lancamento %></p>
 
-   <div  style="margin-top: 6rem;">
-    <%= link_to "Editar livro", edit_livro_path(@livro), class: "btn btn-primary", style:"margin-bottom:1rem" %>
-    <%= button_to "Destrua esse livro", @livro, method: :delete, data: { confirm: 'Tem certeza que deseja deletar?' }, class: "btn btn-danger" %>
-  </div>
+    <div  style="margin-top: 6rem;">
+      <%= link_to "Ver classificações", book_review_path(@livro), class: "btn btn-primary", style:"margin-bottom:1rem" %>
+      <%= link_to "Editar livro", edit_livro_path(@livro), class: "btn btn-primary", style:"margin-bottom:1rem" %>
+      <%= button_to "Destrua esse livro", @livro, method: :delete, data: { confirm: 'Tem certeza que deseja deletar?' }, class: "btn btn-danger" %>
+    </div>
   </div>
 </div>

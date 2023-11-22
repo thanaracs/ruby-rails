@@ -25,6 +25,21 @@
       </div>
     <% end %>
   </div>
+  <div class="col-md-12" style="top: 5rem;widht: 100%; background-color: #c2c8d1; border-radius:10px ">
+    <br><!-- book_reviews/classificacoes.html.erb -->
+    <h3 style="margin:2rem">Avaliações para: <%= @livro.titulo %></h3>
+  
+    <!-- Exibir as avaliações existentes -->
+    <% @reviews.each do |review| %>
+      <div style="background-color: white; margin:2rem; padding:3rem; border-radius:10px">
+        <p><b>Usuário: <%= review.user.username %></b></p>
+        <p><b>Nota: </b><%= review.rating %></p>
+        <p><b>Opinião:</b> <%= review.opinion %></p>
+        <br>
+      </div>
+    <% end %>
+
+  </div>
 </div>
 
 <script>
@@ -41,3 +56,6 @@
     });
   });
 </script>
+
+
+

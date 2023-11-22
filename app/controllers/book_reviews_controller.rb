@@ -12,6 +12,7 @@ class BookReviewsController < ApplicationController
     def show
       @livro = Livro.find(params[:id])
       @book_review = BookReview.new
+      @reviews = @livro.book_reviews
     end
 
     def create
@@ -29,7 +30,7 @@ class BookReviewsController < ApplicationController
         end
       end
     end
-  
+
     private
   
     def review_params

@@ -12,9 +12,9 @@ Rails.application.routes.draw do
       get 'favoritar', to: 'livros#favoritar'
     end
   end
-
+  
   devise_for :users, controllers: { registrations: 'users' }
-
+  
   get 'custom_logout', to: 'custom_sessions#destroy'
   get 'todos_livros', to: 'livros#todos_livros'
   get 'registered_book', to: 'livros#registered_book'
